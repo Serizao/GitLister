@@ -1,6 +1,6 @@
 # GitLister
 
-* This tools work with github only (for the moment)*
+__ This tools work with github only (for the moment) __
 
 This tool allows you to exit wordlists from repo git without downloading the git in question. This can be used with tools in dirsearch to make a discovery on a website
 
