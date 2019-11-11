@@ -1,7 +1,7 @@
 
 # GitLister
 
-(https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)  ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+ ![made-with-PHP](https://img.shields.io/badge/Made%20with-PHP-1f425f.svg)  ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
 __This tools work with github only (for the moment)__
