@@ -90,4 +90,5 @@ $data = getUrl($url);
 $result = fileOrDirectory($data);
 if($directory){
   echo implode(PHP_EOL,extractPath(treeDirectory($result)));
+  echo PHP_EOL;
 }
