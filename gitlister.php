@@ -81,9 +81,9 @@ function extractPath($data,$newData=array()){
 
 
 $directory = 1;
-if(strstr( $argv[1], '--repo=' )) $url = explode('=',$argv[1])[1];
+if(isset($argv[1]) and strstr( $argv[1], '--repo=' )) $url = explode('=',$argv[1])[1];
 else{
-  echo "Repo paramater is missing";
+  echo "Repo paramater is missing".PHP_EOL;
   exit;
 }
 $data = getUrl($url);
