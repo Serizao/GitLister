@@ -81,7 +81,11 @@ function extractPath($data,$newData=array()){
 
 
 $directory = 1;
-$url = 'https://github.com/Serizao/kolab_tags';
+if(strstr( $argv[1], '--repo=' )) $url = explode('=',$argv[1])[1];
+else{
+  echo "Repo paramater is missing";
+  exit;
+}
 $data = getUrl($url);
 $result = fileOrDirectory($data);
 if($directory){
