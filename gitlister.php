@@ -62,12 +62,17 @@ function treeDirectory($result){
     if(isset($result[$i]['type']) and $result[$i]['type'] == "directory"){
       $a = fileOrDirectory(getUrl('https://github.com'.$result[$i]["link"]),$result[$i]["path"].'/');
       $result[$i]["sub"] = treeDirectory($a);
+      $temp = $a;
     }
+  }
+  for($j=0;$j<count($result);$j++){
+    if(isset($result[$j]['path'])) echo $result[$j]['path'].PHP_EOL;
   }
   return $result;
 }
 
 function extractPath($data,$newData=array()){
+  echo count($data).PHP_EOL;
   for($i=0;$i<count($data);$i++){
   
     if(isset($data[$i]['sub'])){
@@ -75,7 +80,6 @@ function extractPath($data,$newData=array()){
       if(count($temp)>0)  $newData = array_merge($newData,$temp);
     }
     if(!empty($data[$i]['path'])) $newData[] = $data[$i]['path'];
-   
   }
   return $newData;
 }
@@ -89,7 +93,4 @@ else{
 }
 $data = getUrl($url);
 $result = fileOrDirectory($data);
-if($directory){
-  echo implode(PHP_EOL,extractPath(treeDirectory($result)));
-  echo PHP_EOL;
-}
+treeDirectory($result);
